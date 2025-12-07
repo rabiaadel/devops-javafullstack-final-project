@@ -1,8 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 resources:
-  - namespaces
-  - db
-  - twitter-app
-  - monitoring
+  - namespace.yaml
+  - mysqldb.yaml
+  - application.yaml
+  - ./monitoring/monitoring-ingress.yaml  
+  - ./monitoring/prometheus.yaml
+  - ./monitoring/grafana.yaml
